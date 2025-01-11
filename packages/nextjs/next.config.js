@@ -18,6 +18,17 @@ const nextConfig = {
     config.externals.push("pino-pretty", "lokijs", "encoding");
     return config;
   },
+  trailingSlash: true,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  exportTrailingSlash: true,
+  async rewrites() {
+    return [
+      {
+        source: '/blockexplorer/:address?',
+        destination: '/blockexplorer/address/[address]'
+      }
+    ]
+  }
 };
 
 module.exports = nextConfig;
