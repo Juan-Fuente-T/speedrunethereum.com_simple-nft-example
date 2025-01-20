@@ -25,3 +25,6 @@ deployments/localhost
 
 # other
 temp
+
+#.env
+.env
